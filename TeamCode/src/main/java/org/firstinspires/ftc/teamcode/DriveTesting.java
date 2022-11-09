@@ -32,11 +32,9 @@ package org.firstinspires.ftc.teamcode;
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
-import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.util.ElapsedTime;
-import com.qualcomm.robotcore.util.Range;
 
 /**
  * This file contains an example of an iterative (Non-Linear) "OpMode".
@@ -74,7 +72,7 @@ public class DriveTesting extends OpMode
         // Initialize the hardware variables. Note that the strings used here as parameters
         // to 'get' must correspond to the names assigned during the robot configuration
         // step (using the FTC Robot Controller app on the phone).
-        wheelFL  = hardwareMap.get(DcMotorEx.class, "wheelFL");
+        wheelFL  = hardwareMap.get(DcMotorEx.class, "wheelFL";
         wheelFR  = hardwareMap.get(DcMotorEx.class, "wheelFR");
         wheelBL  = hardwareMap.get(DcMotorEx.class, "wheelBL");
         wheelBR  = hardwareMap.get(DcMotorEx.class, "wheelBR");
