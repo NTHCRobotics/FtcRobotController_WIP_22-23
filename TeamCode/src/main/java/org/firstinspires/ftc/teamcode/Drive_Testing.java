@@ -39,6 +39,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.DigitalChannel;
+import com.qualcomm.robotcore.hardware.Gamepad;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
 import com.qualcomm.robotcore.hardware.Servo;
@@ -88,6 +89,7 @@ public class Drive_Testing extends OpMode {
     private DcMotorEx wheelFR;
     private DcMotorEx wheelBL;
     private DcMotorEx wheelBR;
+    private DcMotorEx flipper;
 
 
     //Servos
@@ -122,7 +124,7 @@ public class Drive_Testing extends OpMode {
         wheelFR = hardwareMap.get(DcMotorEx.class, "wheelFR");
         wheelBL = hardwareMap.get(DcMotorEx.class, "wheelBL");
         wheelBR = hardwareMap.get(DcMotorEx.class, "wheelBR");
-
+        flipper = hardwareMap.get(DcMotorEx.class, "flip");
 
         //Touch Sensors
         //intakeSensor = hardwareMap.get(DigitalChannel.class, "intakeTouchSensor");
@@ -296,8 +298,14 @@ public class Drive_Testing extends OpMode {
     }
     private void sensors() {
 
+if (gamepad2.right_bumper){
 
-
+    flipper.setPower(0.7);
+}
+        if (gamepad2.left_bumper){
+            flipper.setPower(-0.7);
+        }
+else flipper.setPower(0);
     }
 
 
