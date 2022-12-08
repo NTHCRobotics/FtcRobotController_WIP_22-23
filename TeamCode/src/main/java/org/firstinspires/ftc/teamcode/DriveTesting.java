@@ -72,7 +72,7 @@ public class DriveTesting extends OpMode
         // Initialize the hardware variables. Note that the strings used here as parameters
         // to 'get' must correspond to the names assigned during the robot configuration
         // step (using the FTC Robot Controller app on the phone).
-        wheelFL  = hardwareMap.get(DcMotorEx.class, "wheelFL";
+        wheelFL  = hardwareMap.get(DcMotorEx.class, "wheelFL");
         wheelFR  = hardwareMap.get(DcMotorEx.class, "wheelFR");
         wheelBL  = hardwareMap.get(DcMotorEx.class, "wheelBL");
         wheelBR  = hardwareMap.get(DcMotorEx.class, "wheelBR");
