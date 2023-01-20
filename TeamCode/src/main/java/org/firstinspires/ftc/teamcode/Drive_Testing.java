@@ -31,6 +31,7 @@ package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.Servo;
@@ -56,10 +57,10 @@ import com.qualcomm.robotcore.util.ElapsedTime;
     name = the name that will display on the Driver Hub
     group = allows you to group OpModes
  */
-@TeleOp(name = "(ftc2)", group = "d")
+@TeleOp(name = "(boooo7)", group = "d")
 //@Disabled  This way it will run on the robot
 public class Drive_Testing extends OpMode {
-    // Declare OpMode members.`
+    // Declare OpMode members.`a
     private ElapsedTime runtime = new ElapsedTime();  //timer
 
     /*
@@ -266,14 +267,18 @@ public class Drive_Testing extends OpMode {
         // check the gamepad buttons and if pressed, increment the appropriate position
         // variable to change the servo location.
 
-        // move arm down on X button if not already at lowest position.
+ 
         if (gamepad2.dpad_up) {
 
-            armBase.setPower(-1);
+            armBase.setVelocity(-2500);
+            armBase.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
+
         } else if (gamepad2.dpad_down) {
-            armBase.setPower(1);
+            armBase.setVelocity(2500);
+            armBase.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
         } else {
             armBase.setPower(0);
+            armBase.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         }
 
     }
@@ -285,7 +290,7 @@ public class Drive_Testing extends OpMode {
             clawGrip.setPosition(0);
         }
         if (gamepad2.right_trigger > 0) {
-            clawGrip.setPosition(0.7); //tune this value where u need it
+            clawGrip.setPosition(0.5); //tune this value where u need it
         }
 
 
